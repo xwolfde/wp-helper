@@ -460,20 +460,22 @@ if ( ! function_exists( 'wphelper_form_link' ) ) :
     
 
 if ( ! function_exists( 'wphelper_save_standard' ) ) :  
-    function wphelper_save_standard($name, $val, $post_id, $post_type, $type='text') {
-	if (isset($name) && isset($post_id) && isset($post_type)) {
+    function wphelper_save_standard($name, $val, $post_id, $type='text') {
+	if (isset($name) && isset($post_id)) {
 	    
 	    if ($type == 'url') {
 		 $newval = ( isset( $val ) ? esc_url( $val ) : 0 );		
 	    } elseif ($type == 'email') {
 		 $newval = ( isset( $val ) ? sanitize_email( $val ) : 0 );	
-	   } elseif ($type == 'text') {
+            } elseif ($type == 'text') {
 		 $newval = ( isset( $val ) ? sanitize_text_field( $val ) : 0 );	
 	    } elseif ($type == 'textnohtml') {
 	        $newval = ( isset( $val ) ? wp_strip_all_tags( $val ) : 0 );	 
+            } elseif (($type == 'intval') || ($type == 'int')) {			
+		 $newval =  ( isset( $val ) ? intval( $val ) : 0 );	 
 	    } elseif ($type == 'textarea') {			
 		 $newval =  ( isset( $val ) ? esc_textarea( $val ) : 0 );				 
-	     } elseif ($type == 'wpeditor') {
+	    } elseif ($type == 'wpeditor') {
 		 $newval =  $val;			 
 	    } else {
 		 $newval = ( isset( $val ) ? sanitize_text_field( $val ) : 0 );
