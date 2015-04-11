@@ -332,7 +332,7 @@ if ( ! function_exists( 'wphelper_form_image' ) ) :
 	    
 
 	    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Bild auswählen', 'wphelper'); ?>" />
-	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Entfernen", 'fau' );?></a></small>
+	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Entfernen", 'wphelper' );?></a></small>
 	    <br><p class="howto"><?php echo $howtotext; ?>	      
 	    </p><script>
 	    jQuery(document).ready(function() {
