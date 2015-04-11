@@ -1,4 +1,4 @@
-# wp-helper
+# wp-helper Version 1.0
 Helpful functions for wordpress plugins and themes
 
 
